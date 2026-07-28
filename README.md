@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cidade Vida Real HMO - Portal Oficial</title>
+    <!-- Fonte estilo GTA San Andreas -->
+    <link href="https://fonts.cdnfonts.com/css/diploma" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,25 +15,32 @@
         }
 
         body {
-            background-color: #121613;
+            background-color: #000000;
             color: #e0e6ed;
             line-height: 1.6;
         }
 
         /* Cabeçalho */
         header {
-            background: linear-gradient(180deg, #1b241e 0%, #0d120f 100%);
-            border-bottom: 3px solid #4b6b42;
-            padding: 2rem 1rem;
+            background: linear-gradient(180deg, #111111 0%, #000000 100%);
+            border-bottom: 3px solid #333333;
+            padding: 2.5rem 1rem;
             text-align: center;
         }
 
         header h1 {
-            font-size: 2.8rem;
-            color: #6b8e23;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            font-family: 'Diploma', 'Old English Text MT', 'Gothic', Georgia, serif;
+            font-size: 3.5rem;
+            color: #ffffff;
+            text-transform: capitalize;
+            letter-spacing: 2px;
+            text-shadow: 
+                3px 3px 0px #000000,
+                -2px -2px 0px #000000,
+                2px -2px 0px #000000,
+                -2px 2px 0px #000000,
+                0px 4px 10px rgba(255, 255, 255, 0.3);
+            margin-bottom: 5px;
         }
 
         header p {
@@ -43,7 +52,7 @@
 
         /* Menu Principal Superior */
         .menu-categorias {
-            background-color: #161d18;
+            background-color: #0a0a0a;
             display: flex;
             justify-content: center;
             gap: 12px;
@@ -52,11 +61,11 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            border-bottom: 2px solid #2e3d30;
+            border-bottom: 2px solid #222222;
         }
 
         .btn-categoria {
-            background-color: #1f2921;
+            background-color: #141414;
             color: #d1d8ce;
             border: 1px solid #4b6b42;
             font-weight: bold;
@@ -94,23 +103,23 @@
             padding: 0 15px;
         }
 
-        /* Seções Principais */
+        /* Seções Principais - Controle de Visibilidade */
         .conteudo-secao {
             display: none;
-            background-color: #1a221c;
+            background-color: #0d0d0d;
             border-left: 4px solid #4b6b42;
             padding: 25px;
             border-radius: 0 8px 8px 0;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.8);
         }
 
         .conteudo-secao.ativo {
             display: block !important;
-            animation: fadeIn 0.4s ease-in-out;
+            animation: fadeIn 0.3s ease-in-out;
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
+            from { opacity: 0; transform: translateY(8px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
@@ -119,7 +128,7 @@
             margin-bottom: 20px;
             text-transform: uppercase;
             font-size: 1.6rem;
-            border-bottom: 1px solid #2e3d30;
+            border-bottom: 1px solid #222222;
             padding-bottom: 8px;
         }
 
@@ -130,16 +139,16 @@
             gap: 10px;
             margin-bottom: 25px;
             flex-wrap: wrap;
-            background: #121813;
+            background: #050505;
             padding: 12px;
             border-radius: 6px;
-            border: 1px solid #2e3d30;
+            border: 1px solid #222222;
         }
 
         .btn-sub-prof {
-            background-color: #18221a;
+            background-color: #111111;
             color: #b0c0b0;
-            border: 1px solid #2e3d30;
+            border: 1px solid #222222;
             padding: 8px 16px;
             border-radius: 4px;
             font-weight: bold;
@@ -173,8 +182,7 @@
 
         /* Máfia (Visual Avermelhado) */
         .mafia-box {
-            background: linear-gradient(135deg, rgba(20, 10, 10, 0.95), rgba(35, 12, 12, 0.95)),
-                        url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1000&auto=format&fit=crop') center/cover;
+            background: linear-gradient(135deg, rgba(15, 5, 5, 0.98), rgba(25, 8, 8, 0.98));
             border: 1px solid #ff2a2a;
             border-radius: 8px;
             padding: 20px;
@@ -195,14 +203,14 @@
             flex-wrap: wrap;
             gap: 8px;
             margin-bottom: 25px;
-            background: rgba(10, 0, 0, 0.6);
+            background: rgba(0, 0, 0, 0.8);
             padding: 12px;
             border-radius: 6px;
             border: 1px solid #441111;
         }
 
         .btn-cargo-mafia {
-            background: #200808;
+            background: #1a0505;
             color: #ffb3b3;
             border: 1px solid #661111;
             padding: 6px 12px;
@@ -222,12 +230,12 @@
 
         .cargo-detalhe {
             display: none;
-            background-color: rgba(15, 5, 5, 0.9);
+            background-color: rgba(10, 2, 2, 0.95);
             border: 1px solid #551111;
             padding: 20px;
             border-radius: 8px;
             margin-bottom: 25px;
-            box-shadow: inset 0 0 15px rgba(0,0,0,0.8);
+            box-shadow: inset 0 0 15px rgba(0,0,0,0.9);
         }
 
         .cargo-detalhe.ativo {
@@ -268,7 +276,7 @@
         }
 
         .comandos-box {
-            background-color: #0a0303;
+            background-color: #050000;
             border-left: 3px solid #ff3333;
             padding: 12px;
             border-radius: 4px;
@@ -302,7 +310,7 @@
 
         .regras-mafia-container {
             margin-top: 25px;
-            background: rgba(15, 5, 5, 0.95);
+            background: rgba(10, 2, 2, 0.95);
             border: 1px solid #661111;
             padding: 20px;
             border-radius: 8px;
@@ -351,7 +359,7 @@
         /* Atualizações (Tema Amarelo) */
         #atualizacoes {
             border-left: 4px solid #ffd700;
-            background: linear-gradient(180deg, #1f1b05 0%, #121003 100%);
+            background: linear-gradient(180deg, #151200 0%, #050500 100%);
             box-shadow: 0 0 15px rgba(255, 215, 0, 0.15);
         }
 
@@ -363,7 +371,7 @@
 
         .btn-versao-card {
             width: 100%;
-            background: linear-gradient(90deg, #332b00 0%, #1a1600 100%);
+            background: linear-gradient(90deg, #262000 0%, #100d00 100%);
             border: 2px solid #ffd700;
             border-radius: 8px;
             padding: 18px 20px;
@@ -408,7 +416,7 @@
 
         .notas-conteudo {
             display: none;
-            background-color: #121002;
+            background-color: #080700;
             border: 1px solid #806a00;
             border-top: none;
             border-radius: 0 0 8px 8px;
@@ -475,10 +483,10 @@
         }
 
         .card {
-            background-color: #121813;
+            background-color: #080d09;
             padding: 18px;
             border-radius: 6px;
-            border: 1px solid #2e3d30;
+            border: 1px solid #1a291d;
         }
 
         .card h3 {
@@ -507,8 +515,8 @@
 
     <!-- Menu Superior -->
     <div class="menu-categorias">
-        <button class="btn-categoria ativo" onclick="abrirAba('profissoes-cargos', this)">💼 Profissões & Cargos</button>
-        <button class="btn-categoria att-btn" onclick="abrirAba('atualizacoes', this)">⚡ Atualizações</button>
+        <button class="btn-categoria ativo" onclick="trocarAba('profissoes-cargos', this)">💼 Profissões & Cargos</button>
+        <button class="btn-categoria att-btn" onclick="trocarAba('atualizacoes', this)">⚡ Atualizações</button>
     </div>
 
     <!-- Conteúdo -->
@@ -521,9 +529,9 @@
 
             <!-- Sub-Menu -->
             <div class="sub-menu-profissoes">
-                <button class="btn-sub-prof ativo" onclick="abrirSubAba('sub-honestas', this)">Profissões Honestas</button>
-                <button class="btn-sub-prof sub-mafia" onclick="abrirSubAba('sub-mafia', this)">🔴 Máfia & Crimes</button>
-                <button class="btn-sub-prof" onclick="abrirSubAba('sub-governo', this)">Governo & Serviços</button>
+                <button class="btn-sub-prof ativo" onclick="trocarSubAba('sub-honestas', this)">Profissões Honestas</button>
+                <button class="btn-sub-prof sub-mafia" onclick="trocarSubAba('sub-mafia', this)">🔴 Máfia & Crimes</button>
+                <button class="btn-sub-prof" onclick="trocarSubAba('sub-governo', this)">Governo & Serviços</button>
             </div>
 
             <!-- SUB-ABA 1: PROFISSÕES HONESTAS -->
@@ -558,17 +566,17 @@
                     <p style="color: #e6b8b8; margin-bottom: 15px;">Selecione um cargo abaixo para visualizar o nível necessário, descrição e todos os comandos liberados:</p>
 
                     <div class="mafia-cargos-nav">
-                        <button class="btn-cargo-mafia ativo" onclick="mostrarCargo('cargo-1', this)">1. Traficante de Drogas</button>
-                        <button class="btn-cargo-mafia" onclick="mostrarCargo('cargo-2', this)">2. Traficante de Armas</button>
-                        <button class="btn-cargo-mafia" onclick="mostrarCargo('cargo-3', this)">3. Plantador de Maconha</button>
-                        <button class="btn-cargo-mafia" onclick="mostrarCargo('cargo-4', this)">4. Produtor de Drogas</button>
-                        <button class="btn-cargo-mafia" onclick="mostrarCargo('cargo-5', this)">5. Transp. de Drogas</button>
-                        <button class="btn-cargo-mafia" onclick="mostrarCargo('cargo-6', this)">6. Transp. de Armas</button>
-                        <button class="btn-cargo-mafia" onclick="mostrarCargo('cargo-7', this)">7. Ladrão de Carros</button>
-                        <button class="btn-cargo-mafia" onclick="mostrarCargo('cargo-8', this)">8. Assaltante</button>
-                        <button class="btn-cargo-mafia" onclick="mostrarCargo('cargo-9', this)">9. Sequestrador</button>
-                        <button class="btn-cargo-mafia" onclick="mostrarCargo('cargo-10', this)">10. Terrorista</button>
-                        <button class="btn-cargo-mafia" onclick="mostrarCargo('cargo-11', this)">11. Chefão do Crime</button>
+                        <button class="btn-cargo-mafia ativo" onclick="trocarCargo('cargo-1', this)">1. Traficante de Drogas</button>
+                        <button class="btn-cargo-mafia" onclick="trocarCargo('cargo-2', this)">2. Traficante de Armas</button>
+                        <button class="btn-cargo-mafia" onclick="trocarCargo('cargo-3', this)">3. Plantador de Maconha</button>
+                        <button class="btn-cargo-mafia" onclick="trocarCargo('cargo-4', this)">4. Produtor de Drogas</button>
+                        <button class="btn-cargo-mafia" onclick="trocarCargo('cargo-5', this)">5. Transp. de Drogas</button>
+                        <button class="btn-cargo-mafia" onclick="trocarCargo('cargo-6', this)">6. Transp. de Armas</button>
+                        <button class="btn-cargo-mafia" onclick="trocarCargo('cargo-7', this)">7. Ladrão de Carros</button>
+                        <button class="btn-cargo-mafia" onclick="trocarCargo('cargo-8', this)">8. Assaltante</button>
+                        <button class="btn-cargo-mafia" onclick="trocarCargo('cargo-9', this)">9. Sequestrador</button>
+                        <button class="btn-cargo-mafia" onclick="trocarCargo('cargo-10', this)">10. Terrorista</button>
+                        <button class="btn-cargo-mafia" onclick="trocarCargo('cargo-11', this)">11. Chefão do Crime</button>
                     </div>
 
                     <!-- Fichas -->
@@ -597,6 +605,4 @@
                         <div class="comandos-box">
                             <h4>📜 Comandos do Cargo:</h4>
                             <ul>
-                                <li><code>/verarmas</code> — Exibe o tipo e a quantidade de armas no inventário.</li>
-                                <li><code>/venderarmabot</code> — Realiza a venda de armamentos para o NPC mais próximo.</li>
-                                <li><code>/venderarma [id] [valor]</code> — Oferece e vende armamentos para um jog
+                                <li><code>/verarmas</code> — Exibe
