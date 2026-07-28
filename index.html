@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cidade Vida Real HMO - Portal Oficial</title>
-    <!-- Importação da fonte estilo GTA / San Andreas -->
+    <!-- Fonte estilo GTA San Andreas -->
     <link href="https://fonts.cdnfonts.com/css/diploma" rel="stylesheet">
     <style>
         * {
@@ -28,7 +28,6 @@
             text-align: center;
         }
 
-        /* Estilo da fonte Conexão Los Santos idêntico à capa do San Andreas */
         header h1 {
             font-family: 'Diploma', 'Old English Text MT', 'Gothic', Georgia, serif;
             font-size: 3.5rem;
@@ -104,7 +103,7 @@
             padding: 0 15px;
         }
 
-        /* Seções Principais */
+        /* Seções Principais - Controle de Visibilidade */
         .conteudo-secao {
             display: none;
             background-color: #0d0d0d;
@@ -116,11 +115,11 @@
 
         .conteudo-secao.ativo {
             display: block !important;
-            animation: fadeIn 0.4s ease-in-out;
+            animation: fadeIn 0.3s ease-in-out;
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
+            from { opacity: 0; transform: translateY(8px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
@@ -183,8 +182,7 @@
 
         /* Máfia (Visual Avermelhado) */
         .mafia-box {
-            background: linear-gradient(135deg, rgba(15, 5, 5, 0.98), rgba(25, 8, 8, 0.98)),
-                        url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1000&auto=format&fit=crop') center/cover;
+            background: linear-gradient(135deg, rgba(15, 5, 5, 0.98), rgba(25, 8, 8, 0.98));
             border: 1px solid #ff2a2a;
             border-radius: 8px;
             padding: 20px;
@@ -517,8 +515,8 @@
 
     <!-- Menu Superior -->
     <div class="menu-categorias">
-        <button class="btn-categoria ativo" onclick="abrirAba('profissoes-cargos', this)">💼 Profissões & Cargos</button>
-        <button class="btn-categoria att-btn" onclick="abrirAba('atualizacoes', this)">⚡ Atualizações</button>
+        <button class="btn-categoria ativo" onclick="trocarAba('profissoes-cargos', this)">💼 Profissões & Cargos</button>
+        <button class="btn-categoria att-btn" onclick="trocarAba('atualizacoes', this)">⚡ Atualizações</button>
     </div>
 
     <!-- Conteúdo -->
@@ -531,9 +529,9 @@
 
             <!-- Sub-Menu -->
             <div class="sub-menu-profissoes">
-                <button class="btn-sub-prof ativo" onclick="abrirSubAba('sub-honestas', this)">Profissões Honestas</button>
-                <button class="btn-sub-prof sub-mafia" onclick="abrirSubAba('sub-mafia', this)">🔴 Máfia & Crimes</button>
-                <button class="btn-sub-prof" onclick="abrirSubAba('sub-governo', this)">Governo & Serviços</button>
+                <button class="btn-sub-prof ativo" onclick="trocarSubAba('sub-honestas', this)">Profissões Honestas</button>
+                <button class="btn-sub-prof sub-mafia" onclick="trocarSubAba('sub-mafia', this)">🔴 Máfia & Crimes</button>
+                <button class="btn-sub-prof" onclick="trocarSubAba('sub-governo', this)">Governo & Serviços</button>
             </div>
 
             <!-- SUB-ABA 1: PROFISSÕES HONESTAS -->
@@ -568,17 +566,17 @@
                     <p style="color: #e6b8b8; margin-bottom: 15px;">Selecione um cargo abaixo para visualizar o nível necessário, descrição e todos os comandos liberados:</p>
 
                     <div class="mafia-cargos-nav">
-                        <button class="btn-cargo-mafia ativo" onclick="mostrarCargo('cargo-1', this)">1. Traficante de Drogas</button>
-                        <button class="btn-cargo-mafia" onclick="mostrarCargo('cargo-2', this)">2. Traficante de Armas</button>
-                        <button class="btn-cargo-mafia" onclick="mostrarCargo('cargo-3', this)">3. Plantador de Maconha</button>
-                        <button class="btn-cargo-mafia" onclick="mostrarCargo('cargo-4', this)">4. Produtor de Drogas</button>
-                        <button class="btn-cargo-mafia" onclick="mostrarCargo('cargo-5', this)">5. Transp. de Drogas</button>
-                        <button class="btn-cargo-mafia" onclick="mostrarCargo('cargo-6', this)">6. Transp. de Armas</button>
-                        <button class="btn-cargo-mafia" onclick="mostrarCargo('cargo-7', this)">7. Ladrão de Carros</button>
-                        <button class="btn-cargo-mafia" onclick="mostrarCargo('cargo-8', this)">8. Assaltante</button>
-                        <button class="btn-cargo-mafia" onclick="mostrarCargo('cargo-9', this)">9. Sequestrador</button>
-                        <button class="btn-cargo-mafia" onclick="mostrarCargo('cargo-10', this)">10. Terrorista</button>
-                        <button class="btn-cargo-mafia" onclick="mostrarCargo('cargo-11', this)">11. Chefão do Crime</button>
+                        <button class="btn-cargo-mafia ativo" onclick="trocarCargo('cargo-1', this)">1. Traficante de Drogas</button>
+                        <button class="btn-cargo-mafia" onclick="trocarCargo('cargo-2', this)">2. Traficante de Armas</button>
+                        <button class="btn-cargo-mafia" onclick="trocarCargo('cargo-3', this)">3. Plantador de Maconha</button>
+                        <button class="btn-cargo-mafia" onclick="trocarCargo('cargo-4', this)">4. Produtor de Drogas</button>
+                        <button class="btn-cargo-mafia" onclick="trocarCargo('cargo-5', this)">5. Transp. de Drogas</button>
+                        <button class="btn-cargo-mafia" onclick="trocarCargo('cargo-6', this)">6. Transp. de Armas</button>
+                        <button class="btn-cargo-mafia" onclick="trocarCargo('cargo-7', this)">7. Ladrão de Carros</button>
+                        <button class="btn-cargo-mafia" onclick="trocarCargo('cargo-8', this)">8. Assaltante</button>
+                        <button class="btn-cargo-mafia" onclick="trocarCargo('cargo-9', this)">9. Sequestrador</button>
+                        <button class="btn-cargo-mafia" onclick="trocarCargo('cargo-10', this)">10. Terrorista</button>
+                        <button class="btn-cargo-mafia" onclick="trocarCargo('cargo-11', this)">11. Chefão do Crime</button>
                     </div>
 
                     <!-- Fichas -->
@@ -603,4 +601,8 @@
                             <h3>2. Traficante de Armas</h3>
                             <span class="cargo-badge">Nível Necessário: 20 | Salário: N/A</span>
                         </div>
-                        <p class="cargo-descricao">Armador clandestino responsável pelo mercado negro. Comercializa armamentos sem registro para jogadores e NPCs
+                        <p class="cargo-descricao">Armador clandestino responsável pelo mercado negro. Comercializa armamentos sem registro para jogadores e NPCs.</p>
+                        <div class="comandos-box">
+                            <h4>📜 Comandos do Cargo:</h4>
+                            <ul>
+                                <li><code>/verarmas</code> — Exibe
