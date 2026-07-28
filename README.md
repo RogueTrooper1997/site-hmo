@@ -75,10 +75,17 @@
             box-shadow: 0 0 10px rgba(107, 142, 35, 0.5);
         }
 
+        /* Destaque Amarelo para o Botão de Atualizações */
+        .btn-categoria.att-btn {
+            border-color: #ffd700;
+            color: #ffe866;
+        }
+
         .btn-categoria.att-btn:hover, .btn-categoria.att-btn.ativo {
-            background-color: #005580;
-            border-color: #33bbff;
-            box-shadow: 0 0 12px rgba(51, 187, 255, 0.6);
+            background-color: #ffd700;
+            color: #111111;
+            border-color: #ffffff;
+            box-shadow: 0 0 14px rgba(255, 215, 0, 0.9);
         }
 
         /* Container de Conteúdo */
@@ -117,7 +124,7 @@
             padding-bottom: 8px;
         }
 
-        /* Sub-Navegação interna de Profissões e Cargos */
+        /* Sub-Navegação de Profissões e Cargos */
         .sub-menu-profissoes {
             display: flex;
             justify-content: center;
@@ -156,7 +163,6 @@
             box-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
         }
 
-        /* Conteúdos Internos das Sub-Abas */
         .sub-conteudo {
             display: none;
         }
@@ -167,7 +173,7 @@
         }
 
         /* ---------------------------------------------------- */
-        /* ESTILOS EXCLUSIVOS DA SEÇÃO DE MÁFIA (TEMA CRIMINOSO) */
+        /* MÁFIA (TEMA CRIMINOSO)                               */
         /* ---------------------------------------------------- */
         .mafia-box {
             background: linear-gradient(135deg, rgba(20, 10, 10, 0.95), rgba(35, 12, 12, 0.95)),
@@ -187,7 +193,6 @@
             text-transform: uppercase;
         }
 
-        /* Sub-navegação dos Cargos da Máfia */
         .mafia-cargos-nav {
             display: flex;
             flex-wrap: wrap;
@@ -218,7 +223,6 @@
             box-shadow: 0 0 8px rgba(255, 0, 0, 0.5);
         }
 
-        /* Card do Cargo Exibido */
         .cargo-detalhe {
             display: none;
             background-color: rgba(15, 5, 5, 0.9);
@@ -299,7 +303,6 @@
             border-radius: 3px;
         }
 
-        /* Seção de Regras e Observações da Máfia */
         .regras-mafia-container {
             margin-top: 25px;
             background: rgba(15, 5, 5, 0.95);
@@ -349,66 +352,125 @@
         }
 
         /* ---------------------------------------------------- */
-        /* ESTILOS DA SEÇÃO DE ATUALIZAÇÕES (TEMA AZUL)       */
+        /* ESTILOS DA SEÇÃO DE ATUALIZAÇÕES (TEMA TOTAL AMARELO)*/
         /* ---------------------------------------------------- */
         #atualizacoes {
-            border-left: 4px solid #33bbff;
+            border-left: 4px solid #ffd700;
+            background: linear-gradient(180deg, #1f1b05 0%, #121003 100%);
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.15);
         }
 
         #atualizacoes h2 {
-            color: #33bbff;
-            border-bottom: 1px solid #1a4d66;
+            color: #ffd700;
+            border-bottom: 1px solid #665400;
+            text-shadow: 1px 1px 3px #000;
         }
 
-        .card-atualizacao {
-            background-color: #121813;
-            border: 1px solid #2e3d30;
-            border-radius: 6px;
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-
-        .att-header {
+        /* Card Clicável da Versão */
+        .btn-versao-card {
+            width: 100%;
+            background: linear-gradient(90deg, #332b00 0%, #1a1600 100%);
+            border: 2px solid #ffd700;
+            border-radius: 8px;
+            padding: 18px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid #2e3d30;
-            padding-bottom: 8px;
-            margin-bottom: 12px;
-            flex-wrap: wrap;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 12px rgba(255, 215, 0, 0.25);
+            text-align: left;
         }
 
-        .att-header h3 {
-            color: #33bbff;
-            font-size: 1.2rem;
+        .btn-versao-card:hover {
+            background: linear-gradient(90deg, #4d4000 0%, #292300 100%);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+            transform: scale(1.01);
         }
 
-        .att-data {
-            background-color: #00334e;
-            color: #80d8ff;
-            font-size: 0.8rem;
+        .versao-info h3 {
+            color: #ffe866;
+            font-size: 1.25rem;
+            text-transform: uppercase;
+        }
+
+        .versao-info p {
+            color: #e6dc99;
+            font-size: 0.88rem;
+            margin-top: 4px;
+        }
+
+        .badge-status {
+            background-color: #ffd700;
+            color: #111;
             font-weight: bold;
-            padding: 3px 8px;
-            border-radius: 4px;
-            border: 1px solid #005580;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
 
-        .att-lista {
+        /* Conteúdo Expandido */
+        .notas-conteudo {
+            display: none;
+            background-color: #121002;
+            border: 1px solid #806a00;
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+            padding: 25px;
+            margin-top: -5px;
+            margin-bottom: 25px;
+            box-shadow: inset 0 0 15px rgba(0,0,0,0.9);
+        }
+
+        .notas-conteudo.aberto {
+            display: block;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .bloco-secao-att {
+            margin-bottom: 20px;
+        }
+
+        .bloco-secao-att h4 {
+            color: #ffe866;
+            font-size: 1.05rem;
+            margin-bottom: 10px;
+            border-bottom: 1px dashed #665400;
+            padding-bottom: 4px;
+            text-transform: uppercase;
+        }
+
+        .bloco-secao-att ul {
             list-style: none;
+            padding-left: 5px;
         }
 
-        .att-lista li {
+        .bloco-secao-att li {
+            color: #f0e6b3;
+            font-size: 0.93rem;
             margin-bottom: 8px;
-            font-size: 0.95rem;
-            color: #cce6ff;
-            padding-left: 20px;
             position: relative;
+            padding-left: 22px;
+            line-height: 1.5;
         }
 
-        .att-lista li::before {
+        .bloco-secao-att li::before {
             content: "⚡";
             position: absolute;
             left: 0;
+            font-size: 0.8rem;
+            top: 2px;
+        }
+
+        .bloco-secao-att.bugfix li::before {
+            content: "🔧";
+        }
+
+        .bloco-secao-att.futuro li::before {
+            content: "⏳";
         }
 
         /* Grids Genéricos */
@@ -539,33 +601,4 @@
                             <h3>2. Traficante de Armas</h3>
                             <span class="cargo-badge">Nível Necessário: 20 | Salário: N/A</span>
                         </div>
-                        <p class="cargo-descricao">Armador clandestino responsável pelo mercado negro. Comercializa armamentos sem registro para jogadores e NPCs.</p>
-                        <div class="comandos-box">
-                            <h4>📜 Comandos do Cargo:</h4>
-                            <ul>
-                                <li><code>/verarmas</code> — Exibe o tipo e a quantidade de armas no inventário.</li>
-                                <li><code>/venderarmabot</code> — Realiza a venda de armamentos para o NPC mais próximo.</li>
-                                <li><code>/venderarma [id] [valor]</code> — Oferece e vende armamentos para um jogador específico.</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div id="cargo-3" class="cargo-detalhe">
-                        <div class="cargo-header">
-                            <h3>3. Plantador de Maconha</h3>
-                            <span class="cargo-badge">Nível Necessário: 30 | Salário: N/A</span>
-                        </div>
-                        <p class="cargo-descricao">Responsável pelo cultivo e manejo agrícola de maconha, garantindo o suprimento primário da rede de tráfico.</p>
-                        <div class="comandos-box">
-                            <h4>📜 Comandos do Cargo:</h4>
-                            <ul>
-                                <li><code>/plantarmaconha</code> — Inicia o plantio no local.</li>
-                                <li><code>/colhermaconha</code> — Realiza a colheita da plantação pronta.</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div id="cargo-4" class="cargo-detalhe">
-                        <div class="cargo-header">
-                            <h3>4. Produtor de Drogas</h3>
-                            
+                        <p class="cargo-descricao">Armador clandestino responsável pelo mercado negro.
