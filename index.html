@@ -75,10 +75,17 @@
             box-shadow: 0 0 10px rgba(107, 142, 35, 0.5);
         }
 
+        /* Destaque Amarelo para o Botão de Atualizações */
+        .btn-categoria.att-btn {
+            border-color: #ffd700;
+            color: #ffe866;
+        }
+
         .btn-categoria.att-btn:hover, .btn-categoria.att-btn.ativo {
-            background-color: #005580;
-            border-color: #33bbff;
-            box-shadow: 0 0 12px rgba(51, 187, 255, 0.6);
+            background-color: #ffd700;
+            color: #111111;
+            border-color: #ffffff;
+            box-shadow: 0 0 14px rgba(255, 215, 0, 0.9);
         }
 
         /* Container de Conteúdo */
@@ -117,7 +124,7 @@
             padding-bottom: 8px;
         }
 
-        /* Sub-Navegação interna de Profissões e Cargos */
+        /* Sub-Navegação de Profissões e Cargos */
         .sub-menu-profissoes {
             display: flex;
             justify-content: center;
@@ -156,7 +163,6 @@
             box-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
         }
 
-        /* Conteúdos Internos das Sub-Abas */
         .sub-conteudo {
             display: none;
         }
@@ -167,7 +173,7 @@
         }
 
         /* ---------------------------------------------------- */
-        /* ESTILOS EXCLUSIVOS DA SEÇÃO DE MÁFIA (TEMA CRIMINOSO) */
+        /* MÁFIA (TEMA CRIMINOSO)                               */
         /* ---------------------------------------------------- */
         .mafia-box {
             background: linear-gradient(135deg, rgba(20, 10, 10, 0.95), rgba(35, 12, 12, 0.95)),
@@ -187,7 +193,6 @@
             text-transform: uppercase;
         }
 
-        /* Sub-navegação dos Cargos da Máfia */
         .mafia-cargos-nav {
             display: flex;
             flex-wrap: wrap;
@@ -218,7 +223,6 @@
             box-shadow: 0 0 8px rgba(255, 0, 0, 0.5);
         }
 
-        /* Card do Cargo Exibido */
         .cargo-detalhe {
             display: none;
             background-color: rgba(15, 5, 5, 0.9);
@@ -299,7 +303,6 @@
             border-radius: 3px;
         }
 
-        /* Seção de Regras e Observações da Máfia */
         .regras-mafia-container {
             margin-top: 25px;
             background: rgba(15, 5, 5, 0.95);
@@ -349,66 +352,125 @@
         }
 
         /* ---------------------------------------------------- */
-        /* ESTILOS DA SEÇÃO DE ATUALIZAÇÕES (TEMA AZUL)       */
+        /* ESTILOS DA SEÇÃO DE ATUALIZAÇÕES (TEMA TOTAL AMARELO)*/
         /* ---------------------------------------------------- */
         #atualizacoes {
-            border-left: 4px solid #33bbff;
+            border-left: 4px solid #ffd700;
+            background: linear-gradient(180deg, #1f1b05 0%, #121003 100%);
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.15);
         }
 
         #atualizacoes h2 {
-            color: #33bbff;
-            border-bottom: 1px solid #1a4d66;
+            color: #ffd700;
+            border-bottom: 1px solid #665400;
+            text-shadow: 1px 1px 3px #000;
         }
 
-        .card-atualizacao {
-            background-color: #121813;
-            border: 1px solid #2e3d30;
-            border-radius: 6px;
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-
-        .att-header {
+        /* Card Clicável da Versão */
+        .btn-versao-card {
+            width: 100%;
+            background: linear-gradient(90deg, #332b00 0%, #1a1600 100%);
+            border: 2px solid #ffd700;
+            border-radius: 8px;
+            padding: 18px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid #2e3d30;
-            padding-bottom: 8px;
-            margin-bottom: 12px;
-            flex-wrap: wrap;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 12px rgba(255, 215, 0, 0.25);
+            text-align: left;
         }
 
-        .att-header h3 {
-            color: #33bbff;
-            font-size: 1.2rem;
+        .btn-versao-card:hover {
+            background: linear-gradient(90deg, #4d4000 0%, #292300 100%);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+            transform: scale(1.01);
         }
 
-        .att-data {
-            background-color: #00334e;
-            color: #80d8ff;
-            font-size: 0.8rem;
+        .versao-info h3 {
+            color: #ffe866;
+            font-size: 1.25rem;
+            text-transform: uppercase;
+        }
+
+        .versao-info p {
+            color: #e6dc99;
+            font-size: 0.88rem;
+            margin-top: 4px;
+        }
+
+        .badge-status {
+            background-color: #ffd700;
+            color: #111;
             font-weight: bold;
-            padding: 3px 8px;
-            border-radius: 4px;
-            border: 1px solid #005580;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
 
-        .att-lista {
+        /* Conteúdo Expandido */
+        .notas-conteudo {
+            display: none;
+            background-color: #121002;
+            border: 1px solid #806a00;
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+            padding: 25px;
+            margin-top: -5px;
+            margin-bottom: 25px;
+            box-shadow: inset 0 0 15px rgba(0,0,0,0.9);
+        }
+
+        .notas-conteudo.aberto {
+            display: block;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .bloco-secao-att {
+            margin-bottom: 20px;
+        }
+
+        .bloco-secao-att h4 {
+            color: #ffe866;
+            font-size: 1.05rem;
+            margin-bottom: 10px;
+            border-bottom: 1px dashed #665400;
+            padding-bottom: 4px;
+            text-transform: uppercase;
+        }
+
+        .bloco-secao-att ul {
             list-style: none;
+            padding-left: 5px;
         }
 
-        .att-lista li {
+        .bloco-secao-att li {
+            color: #f0e6b3;
+            font-size: 0.93rem;
             margin-bottom: 8px;
-            font-size: 0.95rem;
-            color: #cce6ff;
-            padding-left: 20px;
             position: relative;
+            padding-left: 22px;
+            line-height: 1.5;
         }
 
-        .att-lista li::before {
+        .bloco-secao-att li::before {
             content: "⚡";
             position: absolute;
             left: 0;
+            font-size: 0.8rem;
+            top: 2px;
+        }
+
+        .bloco-secao-att.bugfix li::before {
+            content: "🔧";
+        }
+
+        .bloco-secao-att.futuro li::before {
+            content: "⏳";
         }
 
         /* Grids Genéricos */
@@ -539,265 +601,4 @@
                             <h3>2. Traficante de Armas</h3>
                             <span class="cargo-badge">Nível Necessário: 20 | Salário: N/A</span>
                         </div>
-                        <p class="cargo-descricao">Armador clandestino responsável pelo mercado negro. Comercializa armamentos sem registro para jogadores e NPCs.</p>
-                        <div class="comandos-box">
-                            <h4>📜 Comandos do Cargo:</h4>
-                            <ul>
-                                <li><code>/verarmas</code> — Exibe o tipo e a quantidade de armas no inventário.</li>
-                                <li><code>/venderarmabot</code> — Realiza a venda de armamentos para o NPC mais próximo.</li>
-                                <li><code>/venderarma [id] [valor]</code> — Oferece e vende armamentos para um jogador específico.</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div id="cargo-3" class="cargo-detalhe">
-                        <div class="cargo-header">
-                            <h3>3. Plantador de Maconha</h3>
-                            <span class="cargo-badge">Nível Necessário: 30 | Salário: N/A</span>
-                        </div>
-                        <p class="cargo-descricao">Responsável pelo cultivo e manejo agrícola de maconha, garantindo o suprimento primário da rede de tráfico.</p>
-                        <div class="comandos-box">
-                            <h4>📜 Comandos do Cargo:</h4>
-                            <ul>
-                                <li><code>/plantarmaconha</code> — Inicia o plantio no local.</li>
-                                <li><code>/colhermaconha</code> — Realiza a colheita da plantação pronta.</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div id="cargo-4" class="cargo-detalhe">
-                        <div class="cargo-header">
-                            <h3>4. Produtor de Drogas</h3>
-                            <span class="cargo-badge">Nível Necessário: 40 | Salário: N/A</span>
-                        </div>
-                        <p class="cargo-descricao">Químico do submundo especializado no refino e processamento de substâncias ilícitas sintéticas e derivadas.</p>
-                        <div class="comandos-box">
-                            <h4>📜 Comandos do Cargo:</h4>
-                            <ul>
-                                <li><code>/produzirdrogas</code> — Inicia o processo de produção no laboratório/local.</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div id="cargo-5" class="cargo-detalhe">
-                        <div class="cargo-header">
-                            <h3>5. Transportador de Drogas</h3>
-                            <span class="cargo-badge">Nível Necessário: 80 | Salário: N/A</span>
-                        </div>
-                        <p class="cargo-descricao">Logístico do crime encarregado de mover grandes cargas de entorpecentes em rotas de distribuição pelo mapa.</p>
-                        <div class="comandos-box">
-                            <h4>📜 Comandos do Cargo:</h4>
-                            <ul>
-                                <li><code>/carregardrogas</code> — Carrega o veículo de transporte com a carga de drogas.</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div id="cargo-6" class="cargo-detalhe">
-                        <div class="cargo-header">
-                            <h3>6. Transportador de Armas</h3>
-                            <span class="cargo-badge">Nível Necessário: 90 | Salário: N/A</span>
-                        </div>
-                        <p class="cargo-descricao">Logístico encarregado de abastecer pontos estratégicos e facções com grandes remessas de armas e munição.</p>
-                        <div class="comandos-box">
-                            <h4>📜 Comandos do Cargo:</h4>
-                            <ul>
-                                <li><code>/carregararmas</code> — Carrega o veículo de transporte com o lote de armamentos.</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div id="cargo-7" class="cargo-detalhe">
-                        <div class="cargo-header">
-                            <h3>7. Ladrão de Carros</h3>
-                            <span class="cargo-badge">Nível Necessário: 100 | Salário: N/A</span>
-                        </div>
-                        <p class="cargo-descricao">Especialista em furto de veículos. Localiza e rouba automóveis de NPCs para repasse direto ao desmanche clandestino.</p>
-                        <div class="comandos-box">
-                            <h4>📜 Comandos do Cargo:</h4>
-                            <ul>
-                                <li><code>/roubarcarros</code> — Inicia a tentativa de furto no veículo de NPC mais próximo.</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div id="cargo-8" class="cargo-detalhe">
-                        <div class="cargo-header">
-                            <h3>8. Assaltante</h3>
-                            <span class="cargo-badge">Nível Necessário: 200 | Salário: N/A</span>
-                        </div>
-                        <p class="cargo-descricao">Criminoso voltado a roubos diretos de alto risco, visando alvos móveis, estabelecimentos e cofres a qualquer hora ou local.</p>
-                        <div class="comandos-box">
-                            <h4>📜 Comandos do Cargo:</h4>
-                            <ul>
-                                <li><code>/assaltarbot</code> — Inicia o assalto contra o NPC mais próximo.</li>
-                                <li><code>/assaltar [id]</code> — Anuncia o assalto a um jogador. (A vítima possui o direito de legítima defesa por 2 minutos; se eliminar o assaltante nesse período, recupera 100% do dinheiro roubado).</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div id="cargo-9" class="cargo-detalhe">
-                        <div class="cargo-header">
-                            <h3>9. Sequestrador</h3>
-                            <span class="cargo-badge">Nível Necessário: 300 | Salário: N/A</span>
-                        </div>
-                        <p class="cargo-descricao">Agente de rendição e cativeiro capaz de render e privar a liberdade de jogadores e NPCs para extorsão ou resgate.</p>
-                        <div class="comandos-box">
-                            <h4>📜 Comandos do Cargo:</h4>
-                            <ul>
-                                <li><code>/sequestrarbot</code> — Rende e sequestra o NPC mais próximo.</li>
-                                <li><code>/sequestrar [id]</code> — Rende e sequestra o jogador especificado.</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div id="cargo-10" class="cargo-detalhe">
-                        <div class="cargo-header">
-                            <h3>10. Terrorista</h3>
-                            <span class="cargo-badge">Nível Necessário: 1000 | Salário: N/A</span>
-                        </div>
-                        <p class="cargo-descricao">Especialista em demolições e caos urbano de altíssimo custo e recompensa. Executa ataques coordenados a estruturas e caixas eletrônicos.</p>
-                        <div class="comandos-box">
-                            <h4>📜 Comandos do Cargo:</h4>
-                            <ul>
-                                <li><code>/atentado</code> — Libera a oportunidade de cometer um atentado estrutural (disponível a cada ganho de ponto de experiência).</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div id="cargo-11" class="cargo-detalhe">
-                        <div class="cargo-header">
-                            <h3>11. Chefão do Crime</h3>
-                            <span class="cargo-badge">Nível Necessário: 2000 | Salário: N/A</span>
-                        </div>
-                        <p class="cargo-descricao">Líder supremo do submundo. Detém o controle total da rede criminosa e acesso irrestrito às funções de todos os cargos anteriores.</p>
-                        <div class="comandos-box">
-                            <h4>📜 Comandos do Cargo:</h4>
-                            <ul>
-                                <li><code>Acesso Total</code> — Possui todos os comandos de máfia liberados simultaneamente.</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Regras -->
-                    <div class="regras-mafia-container">
-                        <h3>📌 Observações Gerais e Regras de Mecânica</h3>
-                        <div class="regra-item">
-                            <h4>🧪 Efeitos de Substâncias e Bebidas:</h4>
-                            <ul>
-                                <li><strong>Drogas e Bebidas:</strong> O consumo concede regalias temporárias (aumento de força, redução do consumo de fome e sede e resistência ao sono).</li>
-                                <li><strong>Mecanica de Vício:</strong> O uso contínuo de drogas ou álcool gera dependência química no personagem, exigindo cuidados médicos ou consumo frequente.</li>
-                                <li><strong>Proteção de Trabalho:</strong> Produtores de Drogas e Plantadores de Maconha que trabalharem sem máscara de proteção correm o risco de inalar vapores/folhagens, ficando chapados e entrando em estado de vício crítico.</li>
-                            </ul>
-                        </div>
-                        <div class="regra-item">
-                            <h4>🔫 Rastreabilidade de Armamentos:</h4>
-                            <ul>
-                                <li><strong>Mercado Negro (Traficantes):</strong> Armas vendidas por traficantes são completamente clandestinas e não possuem número de série ou registro no sistema.</li>
-                                <li><strong>Lojas Legais (Ammunation):</strong> Armas adquiridas em lojas oficiais são obrigatoriamente registradas em nome do comprador pelo proprietário do estabelecimento.</li>
-                            </ul>
-                        </div>
-                        <div class="regra-item">
-                            <h4>🚗 Diretrizes para Ladrões de Carros:</h4>
-                            <ul>
-                                <li>O roubo de veículos é restrito a carros de NPCs (bots).</li>
-                                <li>Os veículos roubados não podem ser mantidos para uso pessoal, devendo ser levados exclusivamente ao Desmanche para venda de peças.</li>
-                            </ul>
-                        </div>
-                        <div class="regra-item">
-                            <h4>💰 Escopo de Ação dos Assaltantes:</h4>
-                            <ul>
-                                <li>Assaltantes estão autorizados a investir contra: Players, NPCs, Carros-Forte, Caixas Eletrônicos (ATM), Cofres de Bancos e Porta-malas de veículos de NPCs (gerando saques com itens aleatórios).</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- SUB-ABA 3: GOVERNO & SERVIÇOS -->
-            <div id="sub-governo" class="sub-conteudo">
-                <h3 style="color: #5bc0de; margin-bottom: 10px;">🛡️ Governo & Serviços Públicos</h3>
-                <p>Garanta a ordem, a segurança pública, o socorro médico e o cumprimento das leis na cidade.</p>
-                
-                <div class="cards-grid">
-                    <div class="card governo-card">
-                        <h3>🚔 Polícia Militar / Civil</h3>
-                        <p>Patrulhamento ostensivo, atendimento de ocorrências e combate direto ao crime.</p>
-                    </div>
-                    <div class="card governo-card">
-                        <h3>🪖 Exército HMO (Forças Armadas)</h3>
-                        <p>Segurança de áreas táticas, escolta de alta periculosidade e suporte em guerras urbanas.</p>
-                    </div>
-                    <div class="card governo-card">
-                        <h3>🚑 Paramédico / SAMU</h3>
-                        <p>Atendimento de emergências médicas, resgate de feridos e transporte hospitalar.</p>
-                    </div>
-                    <div class="card governo-card">
-                        <h3>🚒 Corpo de Bombeiros</h3>
-                        <p>Combate a incêndios, acidentes graves e salvamento de cidadãos em perigo.</p>
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-        <!-- 2. SEÇÃO PRINCIPAL: ATUALIZAÇÕES -->
-        <section id="atualizacoes" class="conteudo-secao">
-            <h2>⚡ Registro de Atualizações (Changelog)</h2>
-            <p style="color: #a3c2c2; margin-bottom: 20px;">Fique por dentro de todas as novidades, correções e novos sistemas implementados na Cidade Vida Real HMO:</p>
-
-            <div class="card-atualizacao">
-                <div class="att-header">
-                    <h3>v1.0 - Lançamento Oficial do Portal & Sistema de Máfia</h3>
-                    <span class="att-data">2026</span>
-                </div>
-                <ul class="att-lista">
-                    <li>Implementado o portal web oficial com informações das profissões e governo.</li>
-                    <li>Lançamento da documentação completa dos 11 cargos do Sistema de Máfia.</li>
-                    <li>Adicionado o guia de comandos, mecânicas de vício, mercado negro e diretrizes de assalto/roubos.</li>
-                </ul>
-            </div>
-        </section>
-
-    </div>
-
-    <!-- Scripts da Navegação de Abas e Sub-Abas -->
-    <script>
-        // Alterna seções principais do menu topo
-        function abrirAba(idAba, botaoClicado) {
-            const secoes = document.querySelectorAll('.conteudo-secao');
-            secoes.forEach(secao => secao.classList.remove('ativo'));
-
-            const botoes = document.querySelectorAll('.btn-categoria');
-            botoes.forEach(btn => btn.classList.remove('ativo'));
-
-            document.getElementById(idAba).classList.add('ativo');
-            botaoClicado.classList.add('ativo');
-        }
-
-        // Alterna as sub-abas dentro de Profissões & Cargos
-        function abrirSubAba(idSubAba, botaoClicado) {
-            const subs = document.querySelectorAll('.sub-conteudo');
-            subs.forEach(sub => sub.classList.remove('ativo'));
-
-            const botoesSub = document.querySelectorAll('.btn-sub-prof');
-            botoesSub.forEach(btn => btn.classList.remove('ativo'));
-
-            document.getElementById(idSubAba).classList.add('ativo');
-            botaoClicado.classList.add('ativo');
-        }
-
-        // Alterna entre os cargos da máfia
-        function mostrarCargo(idCargo, botaoClicado) {
-            const cargos = document.querySelectorAll('.cargo-detalhe');
-            cargos.forEach(cargo => cargo.classList.remove('ativo'));
-
-            const botoesCargo = document.querySelectorAll('.btn-cargo-mafia');
-            botoesCargo.forEach(btn => btn.classList.remove('ativo'));
-
-            document.getElementById(idCargo).classList.add('ativo');
-            botaoClicado.classList.add('ativo');
-        }
-    </script>
-</body>
-</html>
+                        <p class="cargo-descricao">Armador clandestino responsável pelo mercado negro.
