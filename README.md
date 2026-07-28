@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cidade Vida Real HMO - Portal Oficial</title>
     <style>
-        /* Reset e Estilos Globais */
         * {
             margin: 0;
             padding: 0;
@@ -42,7 +41,7 @@
             font-weight: 600;
         }
 
-        /* Menu Principal de Categorias */
+        /* Menu Principal Superior */
         .menu-categorias {
             background-color: #161d18;
             display: flex;
@@ -75,7 +74,7 @@
             box-shadow: 0 0 10px rgba(107, 142, 35, 0.5);
         }
 
-        /* Destaque Amarelo para o Botão de Atualizações */
+        /* Botão Amarelo de Atualizações */
         .btn-categoria.att-btn {
             border-color: #ffd700;
             color: #ffe866;
@@ -88,7 +87,7 @@
             box-shadow: 0 0 14px rgba(255, 215, 0, 0.9);
         }
 
-        /* Container de Conteúdo */
+        /* Container */
         .container {
             max-width: 1050px;
             margin: 30px auto;
@@ -106,7 +105,7 @@
         }
 
         .conteudo-secao.ativo {
-            display: block;
+            display: block !important;
             animation: fadeIn 0.4s ease-in-out;
         }
 
@@ -124,7 +123,7 @@
             padding-bottom: 8px;
         }
 
-        /* Sub-Navegação de Profissões e Cargos */
+        /* Sub-Navegação */
         .sub-menu-profissoes {
             display: flex;
             justify-content: center;
@@ -168,13 +167,11 @@
         }
 
         .sub-conteudo.ativo {
-            display: block;
+            display: block !important;
             animation: fadeIn 0.3s ease-in-out;
         }
 
-        /* ---------------------------------------------------- */
-        /* MÁFIA (TEMA CRIMINOSO)                               */
-        /* ---------------------------------------------------- */
+        /* Máfia (Visual Avermelhado) */
         .mafia-box {
             background: linear-gradient(135deg, rgba(20, 10, 10, 0.95), rgba(35, 12, 12, 0.95)),
                         url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1000&auto=format&fit=crop') center/cover;
@@ -234,7 +231,7 @@
         }
 
         .cargo-detalhe.ativo {
-            display: block;
+            display: block !important;
             animation: fadeIn 0.3s ease-in-out;
         }
 
@@ -351,9 +348,7 @@
             top: 2px;
         }
 
-        /* ---------------------------------------------------- */
-        /* ESTILOS DA SEÇÃO DE ATUALIZAÇÕES (TEMA TOTAL AMARELO)*/
-        /* ---------------------------------------------------- */
+        /* Atualizações (Tema Amarelo) */
         #atualizacoes {
             border-left: 4px solid #ffd700;
             background: linear-gradient(180deg, #1f1b05 0%, #121003 100%);
@@ -366,7 +361,6 @@
             text-shadow: 1px 1px 3px #000;
         }
 
-        /* Card Clicável da Versão */
         .btn-versao-card {
             width: 100%;
             background: linear-gradient(90deg, #332b00 0%, #1a1600 100%);
@@ -412,7 +406,6 @@
             gap: 6px;
         }
 
-        /* Conteúdo Expandido */
         .notas-conteudo {
             display: none;
             background-color: #121002;
@@ -426,7 +419,7 @@
         }
 
         .notas-conteudo.aberto {
-            display: block;
+            display: block !important;
             animation: fadeIn 0.3s ease-in-out;
         }
 
@@ -473,7 +466,7 @@
             content: "⏳";
         }
 
-        /* Grids Genéricos */
+        /* Grids */
         .cards-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -506,27 +499,27 @@
 </head>
 <body>
 
-    <!-- Cabeçalho Principal -->
+    <!-- Cabeçalho -->
     <header>
-        <h1>Exército HMO</h1>
+        <h1>Conexão Los Santos</h1>
         <p>Forças Armadas da Cidade HMO - Informações do servidor Cidade Vida Real HMO</p>
     </header>
 
-    <!-- Menu Principal Superior -->
+    <!-- Menu Superior -->
     <div class="menu-categorias">
         <button class="btn-categoria ativo" onclick="abrirAba('profissoes-cargos', this)">💼 Profissões & Cargos</button>
         <button class="btn-categoria att-btn" onclick="abrirAba('atualizacoes', this)">⚡ Atualizações</button>
     </div>
 
-    <!-- Áreas de Conteúdo -->
+    <!-- Conteúdo -->
     <div class="container">
 
-        <!-- 1. SEÇÃO PRINCIPAL: PROFISSÕES & CARGOS -->
+        <!-- 1. PROFISSÕES & CARGOS -->
         <section id="profissoes-cargos" class="conteudo-secao ativo">
             <h2>💼 Guia Geral de Profissões e Cargos</h2>
             <p style="margin-bottom: 20px; color: #a3b899;">Escolha abaixo a área desejada para explorar os detalhes das profissões, facções do crime ou forças do governo:</p>
 
-            <!-- Sub-Menu das 3 Categorias -->
+            <!-- Sub-Menu -->
             <div class="sub-menu-profissoes">
                 <button class="btn-sub-prof ativo" onclick="abrirSubAba('sub-honestas', this)">Profissões Honestas</button>
                 <button class="btn-sub-prof sub-mafia" onclick="abrirSubAba('sub-mafia', this)">🔴 Máfia & Crimes</button>
@@ -564,7 +557,6 @@
                     <h3 class="titulo-mafia">🔴 Sistema de Máfia — Cargos e Mecânicas</h3>
                     <p style="color: #e6b8b8; margin-bottom: 15px;">Selecione um cargo abaixo para visualizar o nível necessário, descrição e todos os comandos liberados:</p>
 
-                    <!-- Abas dos 11 Cargos -->
                     <div class="mafia-cargos-nav">
                         <button class="btn-cargo-mafia ativo" onclick="mostrarCargo('cargo-1', this)">1. Traficante de Drogas</button>
                         <button class="btn-cargo-mafia" onclick="mostrarCargo('cargo-2', this)">2. Traficante de Armas</button>
@@ -579,7 +571,7 @@
                         <button class="btn-cargo-mafia" onclick="mostrarCargo('cargo-11', this)">11. Chefão do Crime</button>
                     </div>
 
-                    <!-- Fichas dos Cargos -->
+                    <!-- Fichas -->
                     <div id="cargo-1" class="cargo-detalhe ativo">
                         <div class="cargo-header">
                             <h3>1. Traficante de Drogas</h3>
@@ -601,4 +593,10 @@
                             <h3>2. Traficante de Armas</h3>
                             <span class="cargo-badge">Nível Necessário: 20 | Salário: N/A</span>
                         </div>
-                        <p class="cargo-descricao">Armador clandestino responsável pelo mercado negro.
+                        <p class="cargo-descricao">Armador clandestino responsável pelo mercado negro. Comercializa armamentos sem registro para jogadores e NPCs.</p>
+                        <div class="comandos-box">
+                            <h4>📜 Comandos do Cargo:</h4>
+                            <ul>
+                                <li><code>/verarmas</code> — Exibe o tipo e a quantidade de armas no inventário.</li>
+                                <li><code>/venderarmabot</code> — Realiza a venda de armamentos para o NPC mais próximo.</li>
+                                <li><code>/venderarma [id] [valor]</code> — Oferece e vende armamentos para um jog
